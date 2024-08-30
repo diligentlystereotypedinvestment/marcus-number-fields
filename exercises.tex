@@ -1,0 +1,114 @@
+\documentclass[a4paper]{article}
+
+\input{~/templates/math.tex}
+
+\title{Selected Exercises from Marcus' Number Fields}
+\author{Vincent Tran}
+
+\begin{document}
+\maketitle
+
+\section{Chapter 1}
+
+For questions 30-32: $R $ is an integral domain (commutative ring with 1 and no zero divisors)
+
+30. Show that two ideals in $R $ are isomorphic as $R $-modules iff they are in the same ideal class.
+\begin{proof}
+	If two ideals $I,J $ are in the same ideal class s.t. $\alpha I = \beta J $, map an element $i\in J $ to $\beta ^{-1} \alpha i $ $\beta ^{-1}\alpha  $ exists because $\alpha I = \beta J $.
+	This is an isomorphism since $\alpha I = \beta J $ and it respects the additive structure ($i_{1}+i_{2} \mapsto \beta ^{-1} \alpha (i_{1}+i_{2}) = \beta ^{-1}\alpha (i_{1})+\beta ^{-1}\alpha i_{2}$).
+
+	For the reverse direction:
+	Given isomorphic $R $ modules $I,J $, we can
+\end{proof}
+
+\section{Chapter 1}
+
+26.
+
+\begin{proof}
+	We do as in Theorem 11:
+
+	Because the $\beta_i $'s generate the same additive subgroup as $\gamma_i $'s, we can write each $\beta _i $ as a sum of $\gamma_i $'s.
+	Hence we have a matrix $M $ with coefficients in $\Z $ s.t.
+	\[
+		\begin{pmatrix} \beta _1\\ \vdots\\ \beta _n \end{pmatrix} = M \begin{pmatrix} \gamma _1\\ \vdots\\ \gamma _n \end{pmatrix}
+	.\]
+	As the coefficients of $M $ are fixed by $\sigma_i $, we get that
+	\[
+		[\sigma_j(\beta_i)] = M[\sigma_j(\gamma_i)]
+	.\]
+	Hence
+	\[
+		\text{disc}(\beta_{1},\ldots ,\beta _n) = |M|^2\text{disc}(\gamma_{1},\ldots ,\gamma _n)
+	.\]
+	As $M $ has coefficients in $\Z $, $|M| \in \Z \implies \text{disc}(\gamma_{1},\ldots,\gamma _n) \mid \text{disc}(\beta_{1},\ldots ,\beta_n)$.
+	Similarly, $\text{disc}(\beta_{1},\ldots ,\beta _n) | \text{disc}(\gamma_{1},\ldots ,\gamma_n) $.
+
+	Therefore they are equal.
+\end{proof}
+
+27a.
+
+\begin{proof}
+	Write $G = \Z \oplus \Z \oplus \cdots \oplus \Z $.
+	Then $H $, as a subset of $G $, is a subset in each coordinate.
+	Thus $H = m_{1}\Z \oplus m_{2}\Z \oplus \cdots \oplus m_n\Z$.
+	Hence $G / H = \Z / m_{1} \Z \oplus \Z / m_{2}\Z \oplus \cdots \oplus \Z / m_n\Z$.
+
+	This is clearly a finite group.
+\end{proof}
+
+27b.
+
+\begin{proof}
+	The existence of a generating set is obvious (just take $(1,\ldots,0),(0,1,\ldots ,0),\ldots ,(0,\ldots ,1) $).
+\end{proof}
+
+27c.
+
+\begin{proof}
+
+\end{proof}
+
+27d.
+
+\begin{proof}
+	Using 27c:
+	Let $H = \alpha_{1}\Z \oplus \cdots \oplus \alpha_n\Z $.
+
+	If they form an integral basis, then $\disc H  = |\{e\} |^2\disc R  $ ($R / H = \{e\}  $ since $R = H$).
+
+	If $\disc H = \disc R $, then by 27c, $\disc H = |R / H|^2\disc R = \disc R \iff |R / H|^2 = 1$.
+	Thus $R / H = \{e\}   $ and $H = R $, showing that $\alpha_{1},\ldots ,\alpha _n $ integral basis.
+
+	Using matrices:
+
+	We have
+	\[
+		A \coloneqq \begin{pmatrix} \alpha_1\\ \vdots\\ \alpha_n \end{pmatrix} = M \begin{pmatrix} x_{1}\\ \vdots \\ x_n \end{pmatrix}
+	\]
+	where $x_i $ is an integral basis.
+	Also define $X = \begin{pmatrix} x_{1}\\ \vdots \\ x_n \end{pmatrix}  $.
+	Hence
+	\[
+		\begin{pmatrix} \sigma_1\ A & \sigma_2\ A & \cdots & \sigma_n\ A \end{pmatrix} = \begin{pmatrix} \sigma_1 MX & \cdots & \sigma_n MX \end{pmatrix} = \begin{pmatrix} M\sigma_1 X & \cdots & M\sigma_n X \end{pmatrix} = M\begin{pmatrix} \sigma_1 X & \cdots & \sigma_n X \end{pmatrix}
+	\]
+	as $M $ is over $\Z $ and facts from linear algebra.
+	Therefore
+	\[
+		\disc\ H = \left|\begin{pmatrix} \sigma_1\ A & \sigma_2\ A & \cdots & \sigma_n\ A \end{pmatrix}\right|^2 = \left|M\begin{pmatrix} \sigma_1 X & \cdots & \sigma_n X \end{pmatrix}\right|^2 = |M|^2 \disc\ G
+	.\]
+
+	So $\disc\ G = \disc\ H $ iff $|M|^2 =1$ iff $M $ is invertible.
+	$M $ is invertible iff $\alpha _1,\ldots ,\alpha_n$ is an basis as well (any linear relation using $x_i $'s can be converted into an expression using $\alpha_i $'s and likewise).
+\end{proof}
+
+27e.
+
+\begin{proof}
+	Let $H = \alpha_{1}\Z \oplus \cdots \oplus \alpha_n\Z $.
+	Since $\disc H = |G / H|^2 \disc G$, $\disc H $ is only square-free if $|G / H| $ is one.
+	Thus $G = H $ and $\alpha_{1},\ldots ,\alpha_n $ form an integral basis for $G $.
+\end{proof}
+
+\end{document}
